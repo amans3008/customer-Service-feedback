@@ -1,0 +1,17 @@
+<ul class="list-group"  >
+  <div class="container" *ngFor ="let ticket of ticketsArray,index as i">
+    <li class="list-group-item">
+        <div class="card">
+            <div class="card-header">
+              {{ ticket.Value.subject }}
+            </div>
+            <div class="card-body">
+              <p class="card-text">{{ ticket.Value.description }}</p>
+              <button class="btn btn-primary" (click)="onDelete(ticket,i)">Delete</button>
+              <button class="btn btn-primary" (click)="onUpdate(ticket,i)">Update</button>
+              <button class="btn btn-primary" (click)="onFeedback(ticket,i)">Feedback</button>
+            </div>
+          </div>
+    </li>
+  </div>
+  </ul>

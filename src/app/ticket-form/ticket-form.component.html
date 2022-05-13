@@ -1,0 +1,11 @@
+<div class="container">
+    <form [formGroup]="ticketForm" (ngSubmit)="onSubmit(ticketForm.value)">
+        <div class="form-group">
+          <input type="text" class="form-control" id="subject" placeholder="Subject" formControlName="subject">
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" id="ticketTextarea" placeholder="Description" rows="3" formControlName="description"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">{{ !this.updateTicket ?'Submit Ticket':'Update Ticket' }}</button>
+      </form> 
+</div>

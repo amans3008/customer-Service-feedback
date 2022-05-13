@@ -1,0 +1,12 @@
+<div class="container">
+    <h6>Write your feedback here</h6><br>
+    <form [formGroup]="feedbackForm" (ngSubmit)="onSubmitFeedback(feedbackForm.value)">
+        <div class="form-group">
+          <textarea class="form-control" id="" placeholder="feedback" rows="3" formControlName="feedback"></textarea>
+        </div>
+        <ngb-rating [max]="5" [(rate)]="currentRating" [readonly]="false" formControlName="Rating"></ngb-rating><br>
+        <br>
+        <button type="submit" class="btn btn-primary">Submit FeedBack</button>
+      </form>
+</div> 
+
