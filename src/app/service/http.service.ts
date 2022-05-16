@@ -1,22 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment as env } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HttpService {
-  constructor(private http: HttpClient) {}
-
   feedbackTicket: any;
   editMode: boolean = false;
   ticket: any;
 
+  private _baseUrl = env.base_url;
+
+  constructor(private http: HttpClient) {}
+
   addTicket(value: object) {
-    return this.http.post(
-      'https://customer-feedback-service-default-rtdb.firebaseio.com/ticket.json',
-      value
-    );
+    return this.http.post(`${this._baseUrl}.json`, value);
   }
 
   onFeedback(value: object) {
