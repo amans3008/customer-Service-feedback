@@ -5,10 +5,10 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { NavBarComponent } from './navbar/navbar.component';
 import { TicketFormComponent } from './ticket-form/ticket-form.component';
 import { Router, RouterModule } from '@angular/router';
-import { AppRoutingModule } from './app.routing.module';
+import { AppRoutingModule } from './routing/app.routing.module';
 import { ShowTicketComponent } from './show-ticket/show-ticket.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
