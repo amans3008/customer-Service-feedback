@@ -22,32 +22,22 @@ export class HttpService {
   onFeedback(value: object) {
     console.log(this.feedbackTicket);
     return this.http.post(
-      'https://customer-feedback-service-default-rtdb.firebaseio.com/ticket/' +
-        this.feedbackTicket.Key +
-        '.json',
+      `${this._baseUrl}/` + this.feedbackTicket.Key + '.json',
       value
     );
   }
 
   fetchTicket(): Observable<any> {
-    return this.http.get(
-      'https://customer-feedback-service-default-rtdb.firebaseio.com/ticket.json'
-    );
+    return this.http.get(`${this._baseUrl}.json`);
   }
 
   onDeleteTickets(ticket: any, index: any) {
-    return this.http.delete(
-      'https://customer-feedback-service-default-rtdb.firebaseio.com/ticket/' +
-        ticket.Key +
-        '.json'
-    );
+    return this.http.delete(`${this._baseUrl}/` + ticket.Key + '.json');
   }
 
   onUpdateTicket(value: object) {
     return this.http.put(
-      'https://customer-feedback-service-default-rtdb.firebaseio.com/ticket/' +
-        this.ticket.Key +
-        '.json',
+      `${this._baseUrl}/` + this.ticket.Key + '.json',
       value
     );
   }
